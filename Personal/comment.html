@@ -49,24 +49,18 @@
           <div class="container">
             <div class="center">
               <h2>Drop Your Message</h2>
-		    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script><div id="test"></div>
-		    <script>
-			    $.getJSON("http://spreadsheets.google.com/feeds/list/e/2PACX-1vT0OSdNjgPVzvSKYRintWKzGhccIxaafsdTQbKQSfK-I6Bfn4r_cxKnZ9SerVhXAHnD2NZsItJmPZFQ/1/public/values?alt=json-in-script&callback=?",function(json){
-				    var e = json.feed.entry,
-					l = e.lentgh,
-					html = "",
-					entry, i, name, comment;
-				    for(i=0;i<l;i++){
-					    entry =e[i];
-					    name = entry.gsx$name.$t;
-					    comment = entry.gsx$comment.$t;
-					    html +=name +" "+comment+"<br/>";
-				    }
-				    $("#test").html(html);
-			    });
-		    </script>
-					
-            </div>
+		   <link href="https://docs.google.com/forms/d/e/1FAIpQLSdUq7-50uOkpNBmyIeJhJIw6LoLOspo7F9CbLPYMZvCod_KqA/viewform" rel="stylesheet" type="text/css">
+				<font size="2">	
+					<form>
+						<p>
+							<font size="3">
+								<b>name?</b>
+							</font>
+						</p>
+						<input type="text" placeholder="Comment" required>
+						<input type="button onclick="duihua()"value="送出">
+						
+	            </div>
             <div class="col-md-8 col-md-offset-2">
 
               <div id="sendmessage">Your message has been sent. Thank you!</div>
