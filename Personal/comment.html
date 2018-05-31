@@ -49,7 +49,23 @@
           <div class="container">
             <div class="center">
               <h2>Drop Your Message</h2>
-              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfqXl4_d-3jRAtwUBexmMktOcG9Vlno1rwAQzMIh1LIXHXDIQ/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">正在加载...</iframe>
+		    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js'></script><div id="test"></div>
+		    <script>
+			    $.getJSON("http://spreadsheets.google.com/feeds/list/e/2PACX-1vT0OSdNjgPVzvSKYRintWKzGhccIxaafsdTQbKQSfK-I6Bfn4r_cxKnZ9SerVhXAHnD2NZsItJmPZFQ/1/public/values?alt=json-in-script&callback=?",function(json){
+				    var e = json.feed.entry,
+					l = e.lentgh,
+					html = "",
+					entry, i, name, comment;
+				    for(i=0;i<l;i++){
+					    entry =e[i];
+					    name = entry.gsx$name.$t;
+					    comment = entry.gsx$comment.$t;
+					    html +=name +" "+comment+"<br/>";
+				    }
+				    $("#test").html(html);
+			    });
+		    </script>
+					
             </div>
             <div class="col-md-8 col-md-offset-2">
 
